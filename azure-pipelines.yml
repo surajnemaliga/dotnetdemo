@@ -30,7 +30,7 @@ stages:
           repository: '$(repository)'
           command: 'buildAndPush'
           Dockerfile: '**/Dockerfile'
-          tags: |
+          tags: 1.0.1
             latest
             $(Build.BuildNumber)
 
