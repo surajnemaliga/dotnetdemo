@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnet6-app
+  namespace: bermtec 
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dotnet6-app
+  template:
+    metadata:
+      labels:
+        app: dotnet6-app
+    spec:
+      containers:
+      - name: dotnet6-app
+        image: dotnetdemo1.azurecr.io/dotnet:1.0.1
+        ports:
+        - containerPort: 5000
+      imagePullSecrets:
+      - name: first

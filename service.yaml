@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnet6-service
+  namespace: bermtec  # Set the namespace to "bermtec"
+spec:
+  selector:
+    app: dotnet6-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
+  type: LoadBalancer  # Change this to the appropriate service type based on your requirements
